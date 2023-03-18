@@ -14,11 +14,17 @@
           style="width: 20px; paddingright: 1rem; color: white"
         />
         {{ user.twitter_username }}
-        <!-- <Link to="/errorBoundary" className="smallButton"> Error </Link> -->
+
+        <router-link to="/error_page">
+          <button class="smallButton">Error</button>
+        </router-link>
       </p>
       <div>
+        <router-link to="/repositories"> Repositories </router-link>
+        |
+        <router-link to="/putin"> Putin </router-link>|
         <!-- <Link to="/repositories" className="button btnGreen"> repositories </Link> -->
-        <a :href="user.html_url" className="button btnYellow"> visit profile </a>
+        <a :href="user.html_url"> visit profile </a>
         <!-- <Link to="/donaldTrump" className="button btnBlue"> Donald Trump </Link> -->
       </div>
     </div>
@@ -36,6 +42,11 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+:root {
+  --main-bg-color: rgb(247, 247, 31);
+  --secondary-bg-color: rgb(1, 65, 25);
+  --secondary-blue-color: rgb(22, 122, 189);
+}
 .profile {
   display: flex;
 }
@@ -55,5 +66,40 @@ li {
 }
 a {
   color: #42b983;
+}
+.button {
+  /* Green */
+  border: 2px;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin-right: 1rem;
+  font-size: 16px;
+  color: rgb(1, 65, 25);
+}
+.smallButton {
+  /* Green */
+  border: none;
+  color: white;
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin-left: 1rem;
+  font-size: 10px;
+  background-color: rgb(94, 4, 4);
+}
+
+.btnGreen {
+  background-color: var(--secondary-bg-color);
+}
+.btnBlue {
+  background-color: var(--secondary-blue-color);
+}
+
+.btnYellow {
+  background-color: var(--main-bg-color);
+  color: black;
 }
 </style>
