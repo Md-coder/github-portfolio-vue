@@ -1,7 +1,4 @@
 <template>
-  <nav>
-    <router-link to="/"> Home </router-link>
-  </nav>
   <router-view />
 </template>
 
@@ -13,8 +10,8 @@
   text-align: center;
   color: #2c3e50;
   height: 100vh;
-  display: flex;
-  justify-content: center;
+  display: grid;
+  place-content: center;
   align-items: center;
   margin-top: 5rem;
 }

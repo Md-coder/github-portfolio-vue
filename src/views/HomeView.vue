@@ -1,13 +1,9 @@
 <template>
-  <!-- <img alt="Vue logo" src="../assets/logo.png" /> -->
-  <ErrorBoundary>
-    <Profile :user="user" />
-  </ErrorBoundary>
+  <Profile :user="user" />
 </template>
 
 <script>
 import Profile from '../components/Profile.vue';
-import ErrorBoundary from '../components/ErrorBoundary.vue';
 export default {
   name: 'Home',
   components: {
@@ -23,7 +19,7 @@ export default {
     const githubFetch = async (text) => {
       // setLoading(true);
 
-      const response = await fetch(`https://api.github.com/users/${text}`); //task find how to use .env here
+      const response = await fetch(`https://api.github.com/users/${text}`);
 
       if (response.status === 404) {
         window.location = '/notFound';

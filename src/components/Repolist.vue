@@ -1,4 +1,9 @@
 <template>
+  <nav style="display: block">
+    <router-link to="/">
+      <button class="button" style="background-color: yellow">Home</button>
+    </router-link>
+  </nav>
   <div>
     <ul>
       <router-link to="/repositories/repo_details">
@@ -21,7 +26,7 @@
     <nav class="pagination is-right" role="navigation" aria-label="pagination">
       <ul class="pagination-list">
         <li>
-          <button @click="prev">Prev</button>
+          <button @click="prev" class="button">Prev</button>
         </li>
         <li>
           <span class="pagination-link go-to has-text-orange" aria-label="Goto page 1">{{
@@ -29,7 +34,7 @@
           }}</span>
         </li>
         <li>
-          <button @click="next()">Next</button>
+          <button @click="next()" class="button">Next</button>
         </li>
       </ul>
     </nav>
@@ -75,7 +80,9 @@ export default {
       }
     },
     next() {
-      this.current++;
+      if (this.current < this.pageSize) {
+        this.current++;
+      }
     },
     //     isInLastPage() {
     //       return this.current == 5;
@@ -123,7 +130,7 @@ a {
   display: inline-block;
   margin-right: 1rem;
   font-size: 16px;
-  color: var(--secondary-bg-color);
+  color: rgb(1, 65, 25);
 }
 .smallButton {
   /* Green */
@@ -151,7 +158,7 @@ a {
 }
 .list {
   list-style: none;
-  background-color: rgb(1, 65, 25);
+  background-color: #42b983;
   margin-bottom: 1rem;
   width: 100%;
   padding: 15px 20px;

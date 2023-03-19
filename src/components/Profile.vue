@@ -1,4 +1,9 @@
 <template>
+  <nav style="display: block">
+    <router-link to="/">
+      <button class="button" style="background-color: yellow">Home</button>
+    </router-link>
+  </nav>
   <div class="profile">
     <div class="img">
       <img :src="user.avatar_url" alt="avatar" style="width: 250px" />
@@ -14,17 +19,17 @@
           style="width: 20px; paddingright: 1rem; color: white"
         />
         {{ user.twitter_username }}
-
-        <router-link to="/error_page">
-          <button class="smallButton">Error</button>
-        </router-link>
       </p>
       <div>
-        <router-link to="/repositories"> Repositories </router-link>
+        <router-link to="/repositories">
+          <button class="button btnGreen">Repositories</button>
+        </router-link>
         |
-        <router-link to="/putin"> Putin </router-link>|
+        <router-link to="/putin"> <button class="button btnBlue">Putin</button> </router-link>|
         <!-- <Link to="/repositories" className="button btnGreen"> repositories </Link> -->
-        <a :href="user.html_url"> visit profile </a>
+        <a :href="user.html_url">
+          <button class="button btnYellow">visit profile</button>
+        </a>
         <!-- <Link to="/donaldTrump" className="button btnBlue"> Donald Trump </Link> -->
       </div>
     </div>
@@ -42,11 +47,6 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-:root {
-  --main-bg-color: rgb(247, 247, 31);
-  --secondary-bg-color: rgb(1, 65, 25);
-  --secondary-blue-color: rgb(22, 122, 189);
-}
 .profile {
   display: flex;
 }
@@ -74,8 +74,9 @@ a {
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  margin-right: 1rem;
+  margin-right: 0.5rem;
   font-size: 16px;
+  cursor: pointer;
   color: rgb(1, 65, 25);
 }
 .smallButton {
@@ -92,14 +93,14 @@ a {
 }
 
 .btnGreen {
-  background-color: var(--secondary-bg-color);
+  background-color: #42b983;
 }
 .btnBlue {
-  background-color: var(--secondary-blue-color);
+  background-color: skyblue;
 }
 
 .btnYellow {
-  background-color: var(--main-bg-color);
+  background-color: yellowgreen;
   color: black;
 }
 </style>

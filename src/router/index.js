@@ -4,7 +4,6 @@ import RepositoriesView from '../views/RepositoriesView.vue';
 import SingleRepo from '../components/Repolist.vue';
 import Putin from '../views/PutinView.vue';
 import NotFound from '../views/NotFoundView.vue';
-import ErrorPage from '../views/ErrorView.vue';
 
 const routes = [
   {
@@ -18,14 +17,9 @@ const routes = [
     component: Putin,
   },
   {
-    path: '/notFound',
+    path: '/:pathMatch(.*)*',
     name: 'NotFound',
     component: NotFound,
-  },
-  {
-    path: '/error_page',
-    name: 'ErrorPage',
-    component: ErrorPage,
   },
   {
     path: '/repositories',
@@ -38,14 +32,6 @@ const routes = [
         component: SingleRepo,
       },
     ],
-  },
-  {
-    path: '/about',
-    name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue'),
   },
 ];
 
